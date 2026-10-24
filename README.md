@@ -1,5 +1,5 @@
 <!-- mvno-links:start (npm run markdown이 자동 생성) -->
-**최근 데이터** (수집: 알 수 없음)
+**최근 데이터** (수집: 2026-10-24T09:28:23.969Z)
 
 - JSON: [`data/mvno-list.json`](data/mvno-list.json)
 - Markdown 표: [`data/mvno-list.md`](data/mvno-list.md)
