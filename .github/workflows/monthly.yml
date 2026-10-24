@@ -1,0 +1,78 @@
+name: monthly mvno list
+
+on:
+  schedule:
+    - cron: "0 0 2 * *" # 매달 2일 00:00 UTC (KST 09:00)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mvno-list
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      START_URL: ${{ vars.START_URL }}
+      # 비어 있는 variable/secret은 빈 문자열로 넘어오며 llm-config.js가 미설정으로 처리한다.
+      AGENT_LLM_PROVIDER: ${{ vars.AGENT_LLM_PROVIDER }}
+      AGENT_LLM_MODEL: ${{ vars.AGENT_LLM_MODEL }}
+      AGENT_LLM_BASE_URL: ${{ vars.AGENT_LLM_BASE_URL }}
+      AGENT_LLM_API_KEY: ${{ secrets.AGENT_LLM_API_KEY }}
+      ALIAS_LLM_PROVIDER: ${{ vars.ALIAS_LLM_PROVIDER }}
+      ALIAS_LLM_MODEL: ${{ vars.ALIAS_LLM_MODEL }}
+      ALIAS_LLM_BASE_URL: ${{ vars.ALIAS_LLM_BASE_URL }}
+      ALIAS_LLM_API_KEY: ${{ secrets.ALIAS_LLM_API_KEY }}
+      BROWSER_USE_HEADLESS: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run typecheck
+      - run: npm test
+
+      - name: Fetch terms and build list
+        run: npm start
+
+      - name: Upload collected terms
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: terms
+          path: output/terms.json
+          if-no-files-found: ignore
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if [ -n "$(git status --porcelain -- data/)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/mvno-list.json data/mvno-list.md data/alias-cache.json README.md
+          git commit -m "chore: update mvno list ($(date -u +%Y-%m-%d))"
+          git push
+
+      - name: Update gist
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GIST_ID: ${{ vars.GIST_ID }}
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: npm run publish:gist
