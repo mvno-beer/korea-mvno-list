@@ -1,0 +1,33 @@
+# 로컬 실험용. 사용법은 docs/design.md의 "로컬 실행 (Docker Compose)" 참고.
+x-app: &app
+  build: .
+  image: korea-mvno-list
+  env_file:
+    - path: .env
+      required: false
+  # Chromium은 /dev/shm이 작으면 탭이 죽는다.
+  shm_size: 1gb
+  init: true
+  volumes:
+    # 결과물을 호스트에서 바로 확인한다.
+    - ./data:/app/data
+    - ./output:/app/output
+    # 코드·프롬프트·테스트를 고쳐도 이미지를 다시 빌드하지 않는다. (의존성이 바뀌면 다시 빌드)
+    - ./src:/app/src:ro
+    - ./docs:/app/docs:ro
+    - ./test:/app/test:ro
+
+services:
+  # headless. .env의 BROWSER_USE_HEADLESS를 따른다 (비우면 true).
+  app:
+    <<: *app
+
+  # headful. 브라우저 화면을 http://localhost:6080 에서 본다.
+  # docker compose run 은 포트를 열지 않으므로 --service-ports 를 붙인다.
+  headful:
+    <<: *app
+    environment:
+      BROWSER_USE_HEADLESS: "false"
+    ports:
+      # VNC 비밀번호가 없으므로 호스트 로컬에만 연다.
+      - "127.0.0.1:6080:6080"
