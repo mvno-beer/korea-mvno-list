@@ -1,0 +1,672 @@
+{
+  "mnos": [
+    {
+      "mno": "SKT",
+      "fetched_at": "2026-10-24T09:26:24.669Z",
+      "mvnos": [
+        {
+          "mvno_name": "KCT",
+          "mvno_alias": [
+            "한국케이블텔레콤",
+            "티플러스",
+            "tplus"
+          ],
+          "ktoa_alias": "KCTSKT"
+        },
+        {
+          "mvno_name": "아이즈비전",
+          "mvno_alias": [
+            "아이즈모바일",
+            "EYESVISION",
+            "eyes mobile"
+          ],
+          "ktoa_alias": "아이즈비전SKT"
+        },
+        {
+          "mvno_name": "유니컴즈",
+          "mvno_alias": [
+            "모빙",
+            "mobing",
+            "UNICOMZ"
+          ],
+          "ktoa_alias": "유니컴즈SKT"
+        },
+        {
+          "mvno_name": "큰사람",
+          "mvno_alias": [
+            "큰사람커넥트",
+            "이야기모바일",
+            "이야기알뜰폰"
+          ],
+          "ktoa_alias": "큰사람SKT"
+        },
+        {
+          "mvno_name": "스마텔",
+          "mvno_alias": [
+            "SMARTEL",
+            "스마텔 알뜰폰"
+          ],
+          "ktoa_alias": "스마텔SKT"
+        },
+        {
+          "mvno_name": "SK텔링크",
+          "mvno_alias": [
+            "SK세븐모바일",
+            "세븐모바일",
+            "SK 7mobile",
+            "SK알뜰폰 7mobile",
+            "SK Telink"
+          ],
+          "ktoa_alias": "SK텔링크SKT"
+        },
+        {
+          "mvno_name": "이마트",
+          "mvno_alias": [
+            "이마트 알뜰폰",
+            "emart"
+          ],
+          "ktoa_alias": "이마트SKT"
+        },
+        {
+          "mvno_name": "에스원",
+          "mvno_alias": [
+            "안심모바일",
+            "에스원 안심모바일",
+            "S1"
+          ],
+          "ktoa_alias": "에스원SKT"
+        },
+        {
+          "mvno_name": "프리텔레콤",
+          "mvno_alias": [
+            "프리티",
+            "프리티모바일",
+            "freeT"
+          ],
+          "ktoa_alias": "프리텔레콤SKT"
+        },
+        {
+          "mvno_name": "LG헬로비전",
+          "mvno_alias": [
+            "헬로모바일",
+            "LG헬로모바일",
+            "CJ헬로모바일",
+            "CJ헬로비전",
+            "CJ헬로",
+            "Hello mobile",
+            "LG HelloVision"
+          ],
+          "ktoa_alias": "LG헬로비전SKT"
+        },
+        {
+          "mvno_name": "조이텔",
+          "mvno_alias": [
+            "JOYTEL"
+          ],
+          "ktoa_alias": "조이텔SKT"
+        },
+        {
+          "mvno_name": "머천드코리아",
+          "mvno_alias": [
+            "마이월드",
+            "마이월드모바일",
+            "MyWorld",
+            "토스모바일",
+            "Toss Mobile"
+          ],
+          "ktoa_alias": "머천드코리아SKT"
+        },
+        {
+          "mvno_name": "KB국민은행",
+          "mvno_alias": [
+            "리브모바일",
+            "리브엠",
+            "Liiv M",
+            "KB리브모바일"
+          ],
+          "ktoa_alias": "KB국민은행SKT"
+        },
+        {
+          "mvno_name": "스테이지파이브",
+          "mvno_alias": [
+            "핀다이렉트",
+            "핀다이렉트샵",
+            "핀플레이",
+            "pindirect",
+            "PINPLAY",
+            "STAGE FIVE"
+          ],
+          "ktoa_alias": "스테이지파이브SKT"
+        }
+      ]
+    },
+    {
+      "mno": "KT",
+      "fetched_at": "2026-10-24T09:27:05.806Z",
+      "mvnos": [
+        {
+          "mvno_name": "LG헬로비전",
+          "mvno_alias": [
+            "헬로모바일",
+            "CJ헬로비전",
+            "CJ헬로",
+            "CJ헬로모바일",
+            "Hello Mobile"
+          ],
+          "ktoa_alias": "LG헬로비전KT"
+        },
+        {
+          "mvno_name": "니즈텔레콤",
+          "mvno_alias": [
+            "니즈모바일"
+          ],
+          "ktoa_alias": "니즈텔레콤KT"
+        },
+        {
+          "mvno_name": "더원플랫폼",
+          "mvno_alias": [
+            "아이플러스유",
+            "iplusU"
+          ],
+          "ktoa_alias": "더원플랫폼KT"
+        },
+        {
+          "mvno_name": "미니게이트",
+          "mvno_alias": [
+            "M2모바일",
+            "엠투모바일",
+            "M2 Mobile"
+          ],
+          "ktoa_alias": "미니게이트KT"
+        },
+        {
+          "mvno_name": "스테이지파이브",
+          "mvno_alias": [
+            "핀플레이",
+            "핀다이렉트",
+            "핀다이렉트샵",
+            "PINPLAY",
+            "Pindirect",
+            "Stage Five"
+          ],
+          "ktoa_alias": "스테이지파이브KT"
+        },
+        {
+          "mvno_name": "와이엘랜드",
+          "mvno_alias": [
+            "여유알뜰폰"
+          ],
+          "ktoa_alias": "와이엘랜드KT"
+        },
+        {
+          "mvno_name": "위너스텔",
+          "mvno_alias": [
+            "웰",
+            "웰알뜰폰",
+            "WELL"
+          ],
+          "ktoa_alias": "위너스텔KT"
+        },
+        {
+          "mvno_name": "파인디지털",
+          "mvno_alias": [
+            "FINEDIGITAL"
+          ],
+          "ktoa_alias": "파인디지털KT"
+        },
+        {
+          "mvno_name": "한국케이블텔레콤",
+          "mvno_alias": [
+            "티플러스",
+            "KCT",
+            "tplus"
+          ],
+          "ktoa_alias": "한국케이블텔레콤KT"
+        },
+        {
+          "mvno_name": "ACN코리아",
+          "mvno_alias": [
+            "플래시모바일",
+            "ACN Korea",
+            "Flash Mobile"
+          ],
+          "ktoa_alias": "ACN코리아KT"
+        },
+        {
+          "mvno_name": "KT스카이라이프",
+          "mvno_alias": [
+            "스카이라이프모바일",
+            "스카이라이프",
+            "KT skylife",
+            "skylife Mobile"
+          ],
+          "ktoa_alias": "KT스카이라이프KT"
+        },
+        {
+          "mvno_name": "KT엠모바일",
+          "mvno_alias": [
+            "Kt M 모바일",
+            "엠모바일",
+            "케이티엠모바일",
+            "kt M mobile"
+          ],
+          "ktoa_alias": "KT엠모바일KT"
+        },
+        {
+          "mvno_name": "KT텔레캅",
+          "mvno_alias": [
+            "케이티텔레캅",
+            "KT telecop"
+          ],
+          "ktoa_alias": "KT텔레캅KT"
+        },
+        {
+          "mvno_name": "드림라인",
+          "mvno_alias": [
+            "드림모바일",
+            "Dreamline",
+            "Dream Mobile"
+          ],
+          "ktoa_alias": "드림라인KT"
+        },
+        {
+          "mvno_name": "로카모빌리티",
+          "mvno_alias": [
+            "이비카드",
+            "이동의즐거움",
+            "LOCA Mobility"
+          ],
+          "ktoa_alias": "로카모빌리티KT"
+        },
+        {
+          "mvno_name": "머천드코리아",
+          "mvno_alias": [
+            "마이월드",
+            "마이월드모바일",
+            "MyWorld"
+          ],
+          "ktoa_alias": "머천드코리아KT"
+        },
+        {
+          "mvno_name": "아이디스파워텔",
+          "mvno_alias": [
+            "KT파워텔",
+            "케이티파워텔",
+            "IDIS Powertel"
+          ],
+          "ktoa_alias": "아이디스파워텔KT"
+        },
+        {
+          "mvno_name": "앤알커뮤니케이션",
+          "mvno_alias": [
+            "앤텔레콤",
+            "N텔레콤",
+            "Ntelecom",
+            "NR커뮤니케이션"
+          ],
+          "ktoa_alias": "앤알커뮤니케이션KT"
+        },
+        {
+          "mvno_name": "에스원",
+          "mvno_alias": [
+            "안심모바일",
+            "에스원 안심모바일",
+            "S1"
+          ],
+          "ktoa_alias": "에스원KT"
+        },
+        {
+          "mvno_name": "장성모바일",
+          "mvno_alias": [],
+          "ktoa_alias": "장성모바일KT"
+        },
+        {
+          "mvno_name": "세종텔레콤",
+          "mvno_alias": [
+            "스노우맨",
+            "스노우맨모바일",
+            "snowman",
+            "Sejong Telecom"
+          ],
+          "ktoa_alias": "세종텔레콤KT"
+        },
+        {
+          "mvno_name": "씨엔커뮤니케이션",
+          "mvno_alias": [
+            "씨앤컴",
+            "CN커뮤니케이션"
+          ],
+          "ktoa_alias": "씨엔커뮤니케이션KT"
+        },
+        {
+          "mvno_name": "아이즈비전",
+          "mvno_alias": [
+            "아이즈모바일",
+            "eyes mobile",
+            "EYESVISION"
+          ],
+          "ktoa_alias": "아이즈비전KT"
+        },
+        {
+          "mvno_name": "에넥스텔레콤",
+          "mvno_alias": [
+            "A모바일",
+            "에이모바일",
+            "A Mobile",
+            "Annex Telecom"
+          ],
+          "ktoa_alias": "에넥스텔레콤KT"
+        },
+        {
+          "mvno_name": "에이프러스",
+          "mvno_alias": [
+            "아시아모바일",
+            "Asia Mobile"
+          ],
+          "ktoa_alias": "에이프러스KT"
+        },
+        {
+          "mvno_name": "유니컴즈",
+          "mvno_alias": [
+            "모빙",
+            "모빙알뜰폰",
+            "모빙모바일",
+            "mobing"
+          ],
+          "ktoa_alias": "유니컴즈KT"
+        },
+        {
+          "mvno_name": "제이씨티",
+          "mvno_alias": [
+            "JCT"
+          ],
+          "ktoa_alias": "제이씨티KT"
+        },
+        {
+          "mvno_name": "코드모바일",
+          "mvno_alias": [
+            "이지모바일",
+            "EG모바일",
+            "EG Mobile"
+          ],
+          "ktoa_alias": "코드모바일KT"
+        },
+        {
+          "mvno_name": "큰사람커넥트",
+          "mvno_alias": [
+            "이야기모바일",
+            "큰사람",
+            "이야기알뜰폰"
+          ],
+          "ktoa_alias": "큰사람커넥트KT"
+        },
+        {
+          "mvno_name": "프리텔레콤",
+          "mvno_alias": [
+            "프리티",
+            "freeT",
+            "프리티모바일",
+            "프리티텔레콤"
+          ],
+          "ktoa_alias": "프리텔레콤KT"
+        },
+        {
+          "mvno_name": "한국피엠오",
+          "mvno_alias": [
+            "밸류컴",
+            "Valuecomm"
+          ],
+          "ktoa_alias": "한국피엠오KT"
+        },
+        {
+          "mvno_name": "스마텔",
+          "mvno_alias": [
+            "SMARTEL",
+            "스마텔 알뜰폰"
+          ],
+          "ktoa_alias": "스마텔KT"
+        },
+        {
+          "mvno_name": "KB국민은행",
+          "mvno_alias": [
+            "리브엠",
+            "국민은행",
+            "리브모바일",
+            "KB리브엠",
+            "Liiv M",
+            "Liiv Mobile"
+          ],
+          "ktoa_alias": "KB국민은행KT"
+        },
+        {
+          "mvno_name": "에르엘",
+          "mvno_alias": [],
+          "ktoa_alias": "에르엘KT"
+        },
+        {
+          "mvno_name": "핀샷",
+          "mvno_alias": [
+            "코인샷모바일",
+            "FINSHOT"
+          ],
+          "ktoa_alias": "핀샷KT"
+        }
+      ]
+    },
+    {
+      "mno": "LG U+",
+      "fetched_at": "2026-10-24T09:28:23.969Z",
+      "mvnos": [
+        {
+          "mvno_name": "미디어로그",
+          "mvno_alias": [
+            "유모바일",
+            "U+유모바일",
+            "유플러스 유모바일",
+            "U+알뜰모바일",
+            "유플러스 알뜰모바일",
+            "유모비",
+            "umobi"
+          ],
+          "ktoa_alias": "미디어로그LGT"
+        },
+        {
+          "mvno_name": "인스코비",
+          "mvno_alias": [
+            "프리티",
+            "프리티텔레콤",
+            "freeT"
+          ],
+          "ktoa_alias": "인스코비LGT"
+        },
+        {
+          "mvno_name": "머천드코리아",
+          "mvno_alias": [
+            "마이월드",
+            "마이월드모바일",
+            "MyWorld",
+            "토스모바일",
+            "Toss Mobile"
+          ],
+          "ktoa_alias": "머천드코리아LGT"
+        },
+        {
+          "mvno_name": "엠티티텔레콤",
+          "mvno_alias": [
+            "메리큐",
+            "MerryQ"
+          ],
+          "ktoa_alias": "엠티티텔레콤LGT"
+        },
+        {
+          "mvno_name": "이마트",
+          "mvno_alias": [
+            "이마트 알뜰폰",
+            "emart"
+          ],
+          "ktoa_alias": "이마트LGT"
+        },
+        {
+          "mvno_name": "서경방송",
+          "mvno_alias": [
+            "서경모바일",
+            "SCS",
+            "SCS서경방송"
+          ],
+          "ktoa_alias": "서경방송LGT"
+        },
+        {
+          "mvno_name": "울산방송",
+          "mvno_alias": [
+            "JCN",
+            "JCN울산중앙방송",
+            "울산중앙방송"
+          ],
+          "ktoa_alias": "울산방송LGT"
+        },
+        {
+          "mvno_name": "푸른방송",
+          "mvno_alias": [
+            "GCS",
+            "GCS푸른방송"
+          ],
+          "ktoa_alias": "푸른방송LGT"
+        },
+        {
+          "mvno_name": "남인천방송",
+          "mvno_alias": [
+            "NIB",
+            "NIB남인천방송"
+          ],
+          "ktoa_alias": "남인천방송LGT"
+        },
+        {
+          "mvno_name": "금강방송",
+          "mvno_alias": [
+            "KCN",
+            "KCN금강방송"
+          ],
+          "ktoa_alias": "금강방송LGT"
+        },
+        {
+          "mvno_name": "제주방송",
+          "mvno_alias": [
+            "KCTV",
+            "KCTV제주방송"
+          ],
+          "ktoa_alias": "제주방송LGT"
+        },
+        {
+          "mvno_name": "와이엘랜드",
+          "mvno_alias": [
+            "여유텔레콤",
+            "여유모바일"
+          ],
+          "ktoa_alias": "와이엘랜드LGT"
+        },
+        {
+          "mvno_name": "ACN코리아",
+          "mvno_alias": [
+            "플래시모바일",
+            "Flash Mobile",
+            "ACN Korea"
+          ],
+          "ktoa_alias": "ACN코리아LGT"
+        },
+        {
+          "mvno_name": "이지모바일",
+          "mvno_alias": [
+            "EG모바일",
+            "EG Mobile"
+          ],
+          "ktoa_alias": "이지모바일LGT"
+        },
+        {
+          "mvno_name": "유니컴즈",
+          "mvno_alias": [
+            "모빙",
+            "mobing",
+            "UNICOMZ"
+          ],
+          "ktoa_alias": "유니컴즈LGT"
+        },
+        {
+          "mvno_name": "큰사람",
+          "mvno_alias": [
+            "큰사람커넥트",
+            "이야기모바일",
+            "이야기알뜰폰"
+          ],
+          "ktoa_alias": "큰사람LGT"
+        },
+        {
+          "mvno_name": "스마텔",
+          "mvno_alias": [
+            "SMARTEL",
+            "스마텔 알뜰폰"
+          ],
+          "ktoa_alias": "스마텔LGT"
+        },
+        {
+          "mvno_name": "에넥스텔레콤",
+          "mvno_alias": [
+            "A모바일",
+            "에이모바일",
+            "A Mobile",
+            "앤텔레콤",
+            "Annex Telecom"
+          ],
+          "ktoa_alias": "에넥스텔레콤LGT"
+        },
+        {
+          "mvno_name": "레그원",
+          "mvno_alias": [
+            "온국민폰"
+          ],
+          "ktoa_alias": "레그원LGT"
+        },
+        {
+          "mvno_name": "드림에이치엔비",
+          "mvno_alias": [
+            "셀모바일",
+            "드림에이치앤비"
+          ],
+          "ktoa_alias": "드림에이치엔비LGT"
+        },
+        {
+          "mvno_name": "조이텔",
+          "mvno_alias": [
+            "JOYTEL"
+          ],
+          "ktoa_alias": "조이텔LGT"
+        },
+        {
+          "mvno_name": "안심모바일",
+          "mvno_alias": [
+            "에스원 안심모바일",
+            "S1 안심모바일"
+          ],
+          "ktoa_alias": "안심모바일LGT"
+        },
+        {
+          "mvno_name": "원텔레콤",
+          "mvno_alias": [],
+          "ktoa_alias": "원텔레콤LGT"
+        },
+        {
+          "mvno_name": "국민은행",
+          "mvno_alias": [
+            "KB국민은행",
+            "리브모바일",
+            "리브엠",
+            "KB리브모바일",
+            "KB리브엠",
+            "Liiv M"
+          ],
+          "ktoa_alias": "국민은행LGT"
+        }
+      ]
+    }
+  ],
+  "fetched_at": null
+}
