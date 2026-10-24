@@ -1,0 +1,31 @@
+{
+  "name": "korea-mvno-list",
+  "version": "0.1.0",
+  "private": true,
+  "description": "browser-use를 사용한 한국 mvno list fetcher",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "npm run agent && npm run extract && npm run markdown",
+    "agent": "node --env-file-if-exists=.env src/agent.ts",
+    "extract": "node --env-file-if-exists=.env src/extract-list.ts",
+    "markdown": "node --env-file-if-exists=.env src/markdown.ts",
+    "publish:gist": "node --env-file-if-exists=.env src/publish-gist.ts",
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.87",
+    "@ai-sdk/openai": "^4.0.101",
+    "@ai-sdk/openai-compatible": "^3.0.77",
+    "ai": "^7.0.152",
+    "browser-use": "^0.9.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^7.0.2"
+  }
+}
