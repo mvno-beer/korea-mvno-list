@@ -4,7 +4,7 @@ browser-use를 사용한 한국 mvno list fetcher
 
 ## 목표
 
-통신사(MNO)별 알뜰폰(MVNO) 목록을 JSON 파일과 markdown 표로 생성해 GitHub repo와 gist로 배포하는 것이 핵심이다.
+통신사(MNO)별 알뜰폰(MVNO) 목록을 JSON 파일과 markdown 표로 생성해 GitHub repo로 배포하는 것이 핵심이다.
 
 ## 출력 형식
 
@@ -46,7 +46,7 @@ JSON만 있을 때는 `npm run markdown`으로 크롤링 없이 표를 다시 �
 
 `npm run markdown`은 `README.md` 맨 위의 "최근 데이터" 블록도 다시 쓴다. (`src/readme.ts`)
 
-- 내용: 수집 시각(`fetched_at`), JSON과 markdown 표 파일 링크. `GIST_ID`가 설정되어 있으면 gist의 같은 파일 링크(`https://gist.github.com/<GIST_ID>#file-mvno-list-json`)도 붙인다.
+- 내용: 수집 시각(`fetched_at`), JSON과 markdown 표 파일 링크
 - `<!-- mvno-links:start ... -->`와 `<!-- mvno-links:end -->` 사이만 교체한다. 표시가 없으면 맨 위에 넣는다. README의 나머지 내용은 건드리지 않는다.
 - 경로는 `README_PATH`(기본 `README.md`) 기준 상대 경로다.
 
@@ -64,7 +64,7 @@ JSON만 있을 때는 `npm run markdown`으로 크롤링 없이 표를 다시 �
 2. [extract] 약관 원문에서 LLM으로 회사명(`mvno_name`)과 브랜드명(`mvno_alias[0]`)을 추출하고, 모든 이름이 원문에 있는지 코드로 대조한다. (아래 "약관 추출")
 3. [extract] LLM에 `회사명(브랜드명)`의 약칭, 별칭, alias 목록을 질의해 `mvno_alias`에 추가한다. (아래 "별칭 보강")
 4. [markdown] KTOA 표기(회사명 + `KT|SKT|LGT`)를 `ktoa_alias`에 넣고 markdown 표를 만든다. (아래 "KTOA 별칭")
-5. JSON과 markdown 표를 GitHub repo에 커밋하고 gist에도 같은 내용으로 갱신한다.
+5. JSON과 markdown 표를 GitHub repo에 커밋한다.
 
 ## 구현
 
@@ -84,7 +84,6 @@ TypeScript와 Node.js(ESM, Node 22.18+)와 npm `browser-use` 패키지(Python br
 | `src/aliases.ts` | LLM 별칭 질의와 캐시 |
 | `src/ktoa.ts` | KTOA 표기 별칭 계산 |
 | `src/markdown.ts` | `npm run markdown`: `ktoa_alias` 추가, JSON → markdown 표 |
-| `src/publish-gist.ts` | gist 갱신 (JSON, markdown 두 파일) |
 | `test/extract.test.ts` | 원문 대조(실제 약관 원문 `test/fixtures/`), 추출 재시도 (mock 모델) |
 | `test/save-terms.test.ts` | 통신사명 해석, 원문 후보 선택 |
 | `test/mvno-list.test.ts` | 출력 JSON 생성, 검증 |
@@ -117,7 +116,7 @@ npm start
 
 ### `.env`
 
-- `npm run agent|extract|markdown|publish:gist`는 Node의 `--env-file-if-exists=.env`로 프로젝트 루트의 `.env`를 읽는다. 파일이 없으면 건너뛴다. (Docker 이미지와 CI에는 `.env`가 없다)
+- `npm run agent|extract|markdown`은 Node의 `--env-file-if-exists=.env`로 프로젝트 루트의 `.env`를 읽는다. 파일이 없으면 건너뛴다. (Docker 이미지와 CI에는 `.env`가 없다)
 - 셸이나 CI에 이미 설정된 환경변수가 `.env`보다 우선한다.
 - `npm test`는 `.env`를 읽지 않는다. 테스트는 환경변수에 의존하지 않는다.
 - browser-use도 import 시 `dotenv`로 현재 디렉터리의 `.env`를 읽는다. 위 플래그와 같은 파일이며, 이미 설정된 값을 덮어쓰지 않는다.
@@ -161,7 +160,6 @@ LLM 관련 환경변수는 `src/llm-config.ts`에서만 읽는다. 빈 문자열
 | `OUTPUT_PATH` | `data/mvno-list.json` | 배포할 JSON |
 | `MARKDOWN_PATH` | `data/mvno-list.md` | 배포할 markdown 표 |
 | `ALIAS_CACHE_PATH` | `data/alias-cache.json` | LLM 별칭 캐시 |
-| `GIST_ID`, `GIST_TOKEN` | (gist 갱신 시 필수) | 갱신할 gist와 토큰 |
 | `BROWSER_USE_HEADLESS` | 자동 | `true`면 헤드리스 |
 
 ## 로컬 실행 (Docker Compose)
@@ -176,7 +174,6 @@ docker compose run --rm app npm run extract       # 수집한 약관(output/term
 docker compose run --rm --service-ports headful   # headful. 화면: http://localhost:6080/vnc.html?autoconnect=1&resize=scale
 docker compose run --rm app npm test
 docker compose run --rm app npm run markdown      # 기존 JSON에서 ktoa_alias와 markdown 표만 다시 생성
-docker compose run --rm app npm run publish:gist  # gist 갱신 (GIST_ID, GIST_TOKEN 필요)
 ```
 
 - 이미지: `mcr.microsoft.com/playwright:v1.64.1-noble` (Node 24, Chromium 포함). Playwright를 올리면 `Dockerfile`의 이미지 태그도 같은 버전으로 올린다.
@@ -242,7 +239,7 @@ Vercel AI SDK(`ai`)의 `generateObject`로 `ALIAS_LLM_*` 설정의 공급사에 
 - 응답이 스키마와 맞지 않으면 1회 다시 질의하고, 그래도 맞지 않으면 실행을 실패로 처리한다. API 호출 오류(네트워크, 429 등)는 AI SDK 기본 재시도를 따른다.
 - 병합: `mvno_alias = [약관 브랜드명, ...LLM 별칭]`. 중복과 회사명과 같은 값은 뺀다. 법인 표기는 LLM이 붙이지 않게 하며 코드는 지우지 않는다.
 - 캐시: 질의 결과를 `data/alias-cache.json`에 `회사명(브랜드명)`을 키로 저장하고 repo에 커밋한다.
-  - LLM 응답은 실행마다 달라질 수 있다. 캐시가 없으면 매달 JSON이 바뀌어 불필요한 커밋과 gist 갱신이 생기므로, 새로 생긴 사업자만 질의한다.
+  - LLM 응답은 실행마다 달라질 수 있다. 캐시가 없으면 매달 JSON이 바뀌어 불필요한 커밋이 생기므로, 새로 생긴 사업자만 질의한다.
   - 약관의 회사명이나 브랜드명이 바뀌면 키가 달라져 다시 질의한다.
   - 캐시에 잘못된 별칭이 있으면 파일을 직접 고친다. 전부 다시 받으려면 `ALIAS_REFRESH=true`로 실행한다.
 - LLM 별칭은 검증되지 않은 값이다. 소비하는 쪽에서 `mvno_alias[0]` 외에는 참고용으로 다룬다.
@@ -268,14 +265,13 @@ Vercel AI SDK(`ai`)의 `generateObject`로 `ALIAS_LLM_*` 설정의 공급사에 
 - 실행 단계
   1. 저장소 체크아웃, Node.js 및 의존성 설치(`npm ci`), Chromium 설치, 타입 검사(`npm run typecheck`), 테스트
   2. 크롤링 → 약관 수집 → JSON 생성 (`BROWSER_USE_HEADLESS=true`)
-  3. `data/` 내용이 이전과 달라졌을 때만 `mvno-list.json`, `mvno-list.md`, `alias-cache.json`, `README.md`를 커밋/푸시하고 gist를 갱신한다.
+  3. `data/` 내용이 이전과 달라졌을 때만 `mvno-list.json`, `mvno-list.md`, `alias-cache.json`, `README.md`를 커밋/푸시한다.
   4. 수집한 약관 원문 JSON은 workflow artifact로 업로드해 디버깅에 쓴다.
 - workflow: `.github/workflows/monthly.yml`
 - 환경변수 / Secrets
-  - repository variables: `START_URL`, `GIST_ID`, `AGENT_LLM_PROVIDER`, `AGENT_LLM_MODEL`, `AGENT_LLM_BASE_URL`, `ALIAS_LLM_PROVIDER`, `ALIAS_LLM_MODEL`, `ALIAS_LLM_BASE_URL` (LLM 값은 비우면 기본값 또는 상속)
-  - secrets: `AGENT_LLM_API_KEY`, `ALIAS_LLM_API_KEY` (별칭이 에이전트 설정을 상속하면 비워 둔다), `GIST_TOKEN`
+  - repository variables: `START_URL`, `AGENT_LLM_PROVIDER`, `AGENT_LLM_MODEL`, `AGENT_LLM_BASE_URL`, `ALIAS_LLM_PROVIDER`, `ALIAS_LLM_MODEL`, `ALIAS_LLM_BASE_URL` (LLM 값은 비우면 기본값 또는 상속)
+  - secrets: `AGENT_LLM_API_KEY`, `ALIAS_LLM_API_KEY` (별칭이 에이전트 설정을 상속하면 비워 둔다)
   - 비어 있는 variable/secret은 빈 문자열로 넘어오며, `llm-config.ts`가 미설정으로 처리한다.
-  - gist 갱신용 토큰: 기본 `GITHUB_TOKEN`은 gist 권한이 없으므로 `gist` scope를 가진 PAT를 `GIST_TOKEN`으로 둔다.
   - repo 커밋 권한: workflow에 `permissions: contents: write`를 준다.
 - 실패 처리
   - 수집된 통신사 수가 3개 미만이거나 MVNO 목록이 비어 있으면 실패로 처리하고 배포하지 않는다. (기존 배포본을 빈 데이터로 덮어쓰지 않기 위함)
