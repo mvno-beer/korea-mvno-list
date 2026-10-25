@@ -1,11 +1,13 @@
+# korea-mvno-list
+
+[![monthly mvno list](https://github.com/mvno-beer/korea-mvno-list/actions/workflows/monthly.yml/badge.svg)](https://github.com/mvno-beer/korea-mvno-list/actions/workflows/monthly.yml)
+
 <!-- mvno-links:start (npm run markdown이 자동 생성) -->
 **최근 데이터** (수집: 2026-10-24T09:28:23.969Z)
 
 - JSON: [`data/mvno-list.json`](data/mvno-list.json)
 - Markdown 표: [`data/mvno-list.md`](data/mvno-list.md)
 <!-- mvno-links:end -->
-
-# korea-mvno-list
 
 한국 이동통신사(MNO)별 알뜰폰(MVNO) 사업자 목록을 JSON과 markdown 표로 제공한다.
 
@@ -17,8 +19,6 @@
 | --- | --- |
 | [`data/mvno-list.json`](data/mvno-list.json) | 통신사별 MVNO 목록 |
 | [`data/mvno-list.md`](data/mvno-list.md) | 같은 내용의 markdown 표 |
-
-같은 파일이 gist에도 올라간다.
 
 ```json
 {
@@ -107,15 +107,15 @@ LLM은 에이전트용과 추출·별칭용을 따로 정한다. 공급사는 �
 | `AGENT_LLM_BASE_URL` | | `openai-compatible`이면 필수 |
 | `ALIAS_LLM_*` | `AGENT_LLM_*` 상속 | 추출·별칭용. `ALIAS_LLM_PROVIDER`를 지정하면 상속하지 않는다 |
 
-나머지 설정(시작 URL, 별칭 캐시 갱신, headless, gist 등)은 [`.env.example`](.env.example)에 설명과 함께 있다.
+나머지 설정(시작 URL, 별칭 캐시 갱신, headless 등)은 [`.env.example`](.env.example)에 설명과 함께 있다.
 
 ## 정기 실행
 
-GitHub Actions([`.github/workflows/monthly.yml`](.github/workflows/monthly.yml))가 매달 2일 00:00 UTC(KST 09:00)에 전체 단계를 실행한다. `data/`가 바뀌었을 때만 커밋하고 gist를 갱신한다. 수동 실행(`workflow_dispatch`)도 된다.
+GitHub Actions([`.github/workflows/monthly.yml`](.github/workflows/monthly.yml))가 매달 2일 00:00 UTC(KST 09:00)에 전체 단계를 실행한다. `data/`가 바뀌었을 때만 커밋한다. 수동 실행(`workflow_dispatch`)도 된다.
 
 저장소에 등록할 값:
 
 | 종류 | 키 |
 | --- | --- |
-| Secrets | `AGENT_LLM_API_KEY`, `GIST_TOKEN` (`gist` scope PAT), 필요하면 `ALIAS_LLM_API_KEY` |
-| Variables | `GIST_ID`, 필요하면 `START_URL`, `AGENT_LLM_*`, `ALIAS_LLM_*` |
+| Secrets | `AGENT_LLM_API_KEY`, 필요하면 `ALIAS_LLM_API_KEY` |
+| Variables | 필요하면 `START_URL`, `AGENT_LLM_*`, `ALIAS_LLM_*` |

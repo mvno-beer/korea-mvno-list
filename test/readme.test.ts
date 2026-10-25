@@ -4,21 +4,19 @@ import { linkPath, README_END, README_START, renderReadmeLinks, updateReadme } f
 
 const links = { jsonPath: 'data/mvno-list.json', markdownPath: 'data/mvno-list.md' };
 
-test('renderReadmeLinks: 수집 시각과 파일 링크, GIST_ID가 있으면 gist 링크', () => {
+test('renderReadmeLinks: 수집 시각과 파일 링크', () => {
   assert.equal(
-    renderReadmeLinks({ ...links, fetchedAt: '2026-10-24T04:12:33.865Z', gistId: 'abc123' }),
+    renderReadmeLinks({ ...links, fetchedAt: '2026-10-24T04:12:33.865Z' }),
     [
       README_START,
       '**최근 데이터** (수집: 2026-10-24T04:12:33.865Z)',
       '',
-      '- JSON: [`data/mvno-list.json`](data/mvno-list.json) · [gist](https://gist.github.com/abc123#file-mvno-list-json)',
-      '- Markdown 표: [`data/mvno-list.md`](data/mvno-list.md) · [gist](https://gist.github.com/abc123#file-mvno-list-md)',
+      '- JSON: [`data/mvno-list.json`](data/mvno-list.json)',
+      '- Markdown 표: [`data/mvno-list.md`](data/mvno-list.md)',
       README_END,
     ].join('\n'),
   );
-  const noGist = renderReadmeLinks({ ...links, fetchedAt: null });
-  assert.match(noGist, /수집: 알 수 없음/);
-  assert.doesNotMatch(noGist, /gist/);
+  assert.match(renderReadmeLinks({ ...links, fetchedAt: null }), /수집: 알 수 없음/);
 });
 
 test('updateReadme: 표시가 없으면 맨 위에 넣고, 있으면 그 사이만 교체', () => {
