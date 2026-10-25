@@ -3,7 +3,7 @@
 [![monthly mvno list](https://github.com/mvno-beer/korea-mvno-list/actions/workflows/monthly.yml/badge.svg)](https://github.com/mvno-beer/korea-mvno-list/actions/workflows/monthly.yml)
 
 <!-- mvno-links:start (npm run markdown이 자동 생성) -->
-**최근 데이터** (수집: 2026-10-24T09:28:23.969Z)
+**최근 데이터** (수집: 2026-10-25T05:35:20.156Z)
 
 - JSON: [`data/mvno-list.json`](data/mvno-list.json)
 - Markdown 표: [`data/mvno-list.md`](data/mvno-list.md)
