@@ -69,10 +69,3 @@ jobs:
           git add data/mvno-list.json data/mvno-list.md data/alias-cache.json README.md
           git commit -m "chore: update mvno list ($(date -u +%Y-%m-%d))"
           git push
-
-      - name: Update gist
-        if: steps.diff.outputs.changed == 'true'
-        env:
-          GIST_ID: ${{ vars.GIST_ID }}
-          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
-        run: npm run publish:gist

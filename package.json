@@ -12,7 +12,6 @@
     "agent": "node --env-file-if-exists=.env src/agent.ts",
     "extract": "node --env-file-if-exists=.env src/extract-list.ts",
     "markdown": "node --env-file-if-exists=.env src/markdown.ts",
-    "publish:gist": "node --env-file-if-exists=.env src/publish-gist.ts",
     "test": "node --test \"test/*.test.ts\"",
     "typecheck": "tsc"
   },
