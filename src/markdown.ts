@@ -31,7 +31,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     jsonPath: linkPath(README_PATH, OUTPUT_PATH),
     markdownPath: linkPath(README_PATH, MARKDOWN_PATH),
     fetchedAt: file.fetched_at,
-    gistId: process.env.GIST_ID?.trim() || undefined,
   });
   await writeFile(README_PATH, updateReadme(await readFile(README_PATH, 'utf8'), block));
   console.log(`wrote ${OUTPUT_PATH}, ${MARKDOWN_PATH}, ${README_PATH}`);
