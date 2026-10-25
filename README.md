@@ -1,6 +1,7 @@
 # korea-mvno-list
 
 [![monthly mvno list](https://github.com/mvno-beer/korea-mvno-list/actions/workflows/monthly.yml/badge.svg)](https://github.com/mvno-beer/korea-mvno-list/actions/workflows/monthly.yml)
+[![hits](https://myhits.vercel.app/api/hit/https%3A%2F%2Fgithub.com%2Fmvno-beer%2Fkorea-mvno-list?color=blue&label=hits&size=small)](https://myhits.vercel.app)
 
 <!-- mvno-links:start (npm run markdown이 자동 생성) -->
 **최근 데이터** (수집: 2026-10-25T05:35:20.156Z)
