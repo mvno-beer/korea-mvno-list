@@ -4,7 +4,7 @@
 [![hits](https://myhits.vercel.app/api/hit/https%3A%2F%2Fgithub.com%2Fmvno-beer%2Fkorea-mvno-list?color=blue&label=hits&size=small)](https://myhits.vercel.app)
 
 <!-- mvno-links:start (npm run markdown이 자동 생성) -->
-**최근 데이터** (수집: 2026-10-25T05:35:20.156Z)
+**최근 데이터** (수집: 2026-11-02T04:46:08.380Z)
 
 - JSON: [`data/mvno-list.json`](data/mvno-list.json)
 - Markdown 표: [`data/mvno-list.md`](data/mvno-list.md)
